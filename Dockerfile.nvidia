@@ -6,7 +6,7 @@
 # January 25, 2022
 
 # Start from generic develompent environment
-FROM intelligentsystemslabutv/ros2env:dev
+FROM intelligentsystemslabutv/ros2-env:dev
 
 # Install Nvidia dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \

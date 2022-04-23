@@ -11,10 +11,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    image: intelligentsystemslabutv/ros2env:dev
+    image: intelligentsystemslabutv/ros2-env:dev
 
   nvidia:
     build:
       context: .
       dockerfile: Dockerfile.nvidia
-    image: intelligentsystemslabutv/ros2env:nvidia
+    image: intelligentsystemslabutv/ros2-env:nvidia
