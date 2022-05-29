@@ -30,13 +30,6 @@ RUN apt-get update && apt-get install -y \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*/apt/lists/*
 ENV LANG en_US.UTF-8
 
-# Set up UTC timezone
-RUN ln -fs /usr/share/zoneinfo/UTC /etc/localtime && \
-  apt-get update && \
-  apt-get install -y --no-install-recommends tzdata && \
-  dpkg-reconfigure --frontend noninteractive tzdata && \
-  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*/apt/lists/*
-
 # Install ROS 2 Galactic Geochelone base and testing packages
 RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg && \
   echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/ros2.list > /dev/null && \
